@@ -22,6 +22,11 @@ const client = new Discord.Client({disableEveryone: true});
 
 const developers = id
 
+const initcmd = settings.initcmd;
+
+const id = settings.id;
+
+
 const prefix = initcmd;
 
 const prefix = "r";
