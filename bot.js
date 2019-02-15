@@ -24,6 +24,44 @@ const prefix = "r";
 /////////////////////////
 ////////////////////////
 
+
+
+client.on('message', message => {
+    var argresult = message.content.split(` `).slice(1).join(' ');
+      if (!developers.includes(message.author.id)) return;
+      
+  if (message.content.startsWith(prefix + 'stplay')) {
+    client.user.setGame(argresult);
+      message.channel.send("**__:white_check_mark: | The Playing Status Has Been Changed To__** : ``"
+   + `${argresult}` + "``**")
+  } else 
+  if (message.content.startsWith(prefix + 'stwat')) {
+  client.user.setActivity(argresult, {type:'WATCHING'});
+      message.channel.send("**__:white_check_mark: | The Watching Status Has Been Changed To__** : ``"
+   + `${argresult}` + "``**")
+  } else 
+  if (message.content.startsWith(prefix + 'stlis')) {
+  client.user.setActivity(argresult , {type:'LISTENING'});
+      message.channel.send("**__:white_check_mark: | The Listening Status Has Been Changed To__** : ``"
+   + `${argresult}` + "``**")
+  } else 
+  if (message.content.startsWith(prefix + 'st')) {
+    client.user.setGame(argresult, "https://www.twitch.tv/7eezi");
+      message.channel.send("**__:white_check_mark: | The Streaming Status Has Been Changed To__** : ``"
+   + `${argresult}` + "``**")
+  }
+  if (message.content.startsWith(prefix + 'stname')) {
+  client.user.setUsername(argresult).then
+      message.channel.send(`Changing The Name To ..**${argresult}** `)
+} else
+if (message.content.startsWith(prefix + 'stavatar')) {
+  client.user.setAvatar(argresult);
+    message.channel.send(`Changing The Avatar To :**${argresult}** `);
+}
+});
+
+
+
 client.on('message', async msg =>{
 	if (msg.author.bot) return undefined;
     if (!msg.content.startsWith(prefix)) return undefined;
