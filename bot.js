@@ -20,9 +20,10 @@ const gif = require("gif-search");
 
 const client = new Discord.Client({disableEveryone: true});
 
-const prefix = "r";
+const prefix = "1";
 /////////////////////////
 ////////////////////////
+
 
 
 client.on('ready', () => { //playing
